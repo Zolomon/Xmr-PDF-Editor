@@ -11,11 +11,13 @@ namespace Exameer
 
 		public string FileName {get;set;}
 
-		public List<Rectangle> rectangles = new List<Rectangle> ();
+		public List<Rectangle> Rectangles {get;set;}
 
 		public PngNode (string path)
 		{
 			this.FileName = path;
+
+			Rectangles = new List<Rectangle>();
 
 			var tmp = path.Split(new Char[] {'/'}, StringSplitOptions.RemoveEmptyEntries);
 			this.Name = tmp[tmp.Length - 1];

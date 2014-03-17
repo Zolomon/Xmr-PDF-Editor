@@ -138,7 +138,7 @@ namespace Exameer
 			this.scaleLeftLine.CanFocus = true;
 			this.scaleLeftLine.Name = "scaleLeftLine";
 			this.scaleLeftLine.Adjustment.Upper = 100;
-			this.scaleLeftLine.Adjustment.PageIncrement = 10;
+			this.scaleLeftLine.Adjustment.PageIncrement = 5;
 			this.scaleLeftLine.Adjustment.StepIncrement = 0.5;
 			this.scaleLeftLine.Adjustment.Value = 25;
 			this.scaleLeftLine.DrawValue = true;
@@ -154,7 +154,7 @@ namespace Exameer
 			this.scaleRightLine.CanFocus = true;
 			this.scaleRightLine.Name = "scaleRightLine";
 			this.scaleRightLine.Adjustment.Upper = 100;
-			this.scaleRightLine.Adjustment.PageIncrement = 10;
+			this.scaleRightLine.Adjustment.PageIncrement = 5;
 			this.scaleRightLine.Adjustment.StepIncrement = 0.5;
 			this.scaleRightLine.Adjustment.Value = 75;
 			this.scaleRightLine.DrawValue = true;
@@ -185,11 +185,12 @@ namespace Exameer
 				this.Child.ShowAll ();
 			}
 			this.DefaultWidth = 708;
-			this.DefaultHeight = 300;
+			this.DefaultHeight = 299;
 			this.Show ();
 			this.SizeAllocated += new global::Gtk.SizeAllocatedHandler (this.OnSizeAllocated);
 			this.KeyReleaseEvent += new global::Gtk.KeyReleaseEventHandler (this.OnKeyReleaseEvent);
 			this.KeyPressEvent += new global::Gtk.KeyPressEventHandler (this.OnKeyPressEvent);
+			this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
 			this.btnResetRectangles.Clicked += new global::System.EventHandler (this.OnBtnResetRectanglesClicked);
 			this.btnPrevImg.Clicked += new global::System.EventHandler (this.OnBtnPrevImgClicked);
 			this.btnNextImg.Clicked += new global::System.EventHandler (this.OnBtnNextImgClicked);

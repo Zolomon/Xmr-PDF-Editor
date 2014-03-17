@@ -11,7 +11,7 @@ namespace Exameer
 
 		public string FileName {get;set;}
 
-		public List<string> Images { get; set; }
+		public List<PngNode> Images { get; set; }
 
 		public PdfNode (string path)
 		{
@@ -20,7 +20,7 @@ namespace Exameer
 			var tmp = path.Split(new Char[] {'/'}, StringSplitOptions.RemoveEmptyEntries);
 			this.Name = tmp[tmp.Length - 1];
 
-			this.Images = new List<string>();
+			this.Images = new List<PngNode>();
 		}
 	}
 }

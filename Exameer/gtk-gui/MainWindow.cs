@@ -149,7 +149,6 @@ public partial class MainWindow
 		// Container child hbox2.Gtk.Box+BoxChild
 		this.lblStatus = new global::Gtk.Label ();
 		this.lblStatus.Name = "lblStatus";
-		this.lblStatus.LabelProp = "";
 		this.hbox2.Add (this.lblStatus);
 		global::Gtk.Box.BoxChild w14 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.lblStatus]));
 		w14.Position = 1;

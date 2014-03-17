@@ -59,6 +59,7 @@
     <Reference Include="Mono.Posix" />
     <Reference Include="System.Core" />
     <Reference Include="Mono.Cairo" />
+    <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
@@ -76,6 +77,10 @@
     <Compile Include="PngNode.cs" />
     <Compile Include="PngViewer.cs" />
     <Compile Include="gtk-gui\Exameer.PngViewer.cs" />
+    <Compile Include="Point.cs" />
+    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="NewIdDialog.cs" />
+    <Compile Include="gtk-gui\Exameer.NewIdDialog.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
