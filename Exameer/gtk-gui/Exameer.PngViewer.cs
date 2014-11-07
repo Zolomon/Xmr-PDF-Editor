@@ -15,7 +15,7 @@ namespace Exameer
 		private global::Gtk.HScale scaleLeftLine;
 		private global::Gtk.HScale scaleRightLine;
 		private global::Gtk.DrawingArea drawingarea1;
-		
+
 		protected virtual void Build ()
 		{
 			global::Stetic.Gui.Initialize (this);
@@ -156,7 +156,7 @@ namespace Exameer
 			this.scaleRightLine.Adjustment.Upper = 100;
 			this.scaleRightLine.Adjustment.PageIncrement = 5;
 			this.scaleRightLine.Adjustment.StepIncrement = 0.5;
-			this.scaleRightLine.Adjustment.Value = 75;
+			this.scaleRightLine.Adjustment.Value = 75.19;
 			this.scaleRightLine.DrawValue = true;
 			this.scaleRightLine.Digits = 2;
 			this.scaleRightLine.ValuePos = ((global::Gtk.PositionType)(0));

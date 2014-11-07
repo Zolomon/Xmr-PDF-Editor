@@ -329,7 +329,11 @@ namespace Exameer
 
 		protected void OnBtnPrevImgClicked (object sender, EventArgs e)
 		{
-			NodeIdx = (NodeIdx - 1) % Nodes.Count;
+			if (NodeIdx == 0) {
+				NodeIdx = Nodes.Count - 1;
+			} else {
+				NodeIdx = (NodeIdx - 1) % Nodes.Count;
+			}
 			SetNode (Nodes [NodeIdx]);
 		}
 
@@ -376,12 +380,18 @@ namespace Exameer
 		protected void OnScaleLeftLineValueChanged (object sender, EventArgs e)
 		{
 			LeftLine = (float)(scaleLeftLine.Value / 100.0) * ScaledPixelBuffer.Width;
+
+			CurrentNode.OnLeftSideChanged ((int)LeftLine);
+
 			this.QueueDraw ();
 		}
 
 		protected void OnScaleRightLineValueChanged (object sender, EventArgs e)
 		{
 			RightLine = (float)(scaleRightLine.Value / 100.0) * ScaledPixelBuffer.Width;
+
+			CurrentNode.OnRightSideChanged ((int)RightLine);
+
 			this.QueueDraw ();
 		}
 

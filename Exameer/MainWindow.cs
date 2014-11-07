@@ -119,7 +119,7 @@ public partial class MainWindow: Gtk.Window
 		                              FileChooserAction.Open,
 		                              "Cancel", ResponseType.Cancel,
 		                              "Open", ResponseType.Accept)) {
-			fc.SetCurrentFolder ("/home/bengt/Dropbox/lth/fmaa01 - endimensionell analys/a3/exams/");
+			fc.SetCurrentFolder ("/media/zol/Green/Dropbox/lth/eda040 - realtidsprogrammering/exams");
 			fc.SelectMultiple = true;
 
 			if (fc.Run () == (int)ResponseType.Accept) {
@@ -133,8 +133,7 @@ public partial class MainWindow: Gtk.Window
 
 	protected void OnBtnConvertClicked (object sender, EventArgs e)
 	{
-		Dictionary<string, Dictionary<int, List<Tuple<Exameer.Rectangle, string>>> > pdfRectangles = 
-			new Dictionary<string, Dictionary<int, List<Tuple<Exameer.Rectangle, string>>> > ();
+		var pdfRectangles = new Dictionary<string, Dictionary<int, List<Tuple<Exameer.Rectangle, string>>> > ();
 
 		// Merge rectangles
 		foreach (PdfNode pdf in StorePDF) {
@@ -164,10 +163,10 @@ public partial class MainWindow: Gtk.Window
 
 		int problemNbr = 0;
 		foreach (var pdf in pdfRectangles) {
-			var dir = Directory.CreateDirectory ("./" + pdf.Key.Replace (".pdf", "") + "/");
+			var createdDestinationDir = Directory.CreateDirectory ("./" + pdf.Key.Replace (".pdf", "") + "/");
 
 			foreach (var pngrects in pdf.Value) {
-				List<Tuple<ImageSurface, Exameer.Rectangle>> surfaces = new List<Tuple<ImageSurface, Exameer.Rectangle>> ();
+				var surfaces = new List<Tuple<ImageSurface, Exameer.Rectangle>> ();
 
 				foreach (var rectangle in pngrects.Value) {
 					surfaces.Add (new Tuple<ImageSurface, Exameer.Rectangle> (new ImageSurface (rectangle.Item2), rectangle.Item1));
@@ -206,7 +205,8 @@ public partial class MainWindow: Gtk.Window
 
 					cr.Rectangle (dstx, dsty, w, h);
 					cr.Fill ();
-					lastY = (int)((r.Height / (float)r.Parent.Height) * png.Height);
+					//lastY = (int)((r.Height / (float)r.Parent.Height) * png.Height);
+					lastY = dsty + h;
 				
 				}
 
@@ -215,11 +215,12 @@ public partial class MainWindow: Gtk.Window
 				                   (problemNbr++) + ".png");
 
 				newImg.Dispose ();
-				newImg.Destroy ();
-				surfaces.ForEach (x => x.Item1.Destroy ());
+				//newImg.Dispose ();
+				//surfaces.ForEach (x => x.Item1.Destroy ());
+				surfaces.ForEach (x => x.Item1.Dispose ());
 
 				png.Dispose ();
-				png.Destroy ();
+				//png.Destroy ();
 			}
 
 			problemNbr = 0;

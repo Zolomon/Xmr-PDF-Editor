@@ -22,6 +22,18 @@ namespace Exameer
 			var tmp = path.Split(new Char[] {'/'}, StringSplitOptions.RemoveEmptyEntries);
 			this.Name = tmp[tmp.Length - 1];
 		}
+
+		public void OnLeftSideChanged(int pos) {
+			foreach (var rect in Rectangles) {
+				rect.x1 = pos;
+			}
+		}
+
+		public void OnRightSideChanged(int pos) {
+			foreach (var rect in Rectangles) {
+				rect.x2 = pos;
+			}
+		}
 	}
 }
 

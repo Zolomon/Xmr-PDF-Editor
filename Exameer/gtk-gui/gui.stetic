@@ -389,7 +389,7 @@
                     <property name="Upper">100</property>
                     <property name="PageIncrement">5</property>
                     <property name="StepIncrement">0.5</property>
-                    <property name="Value">75</property>
+                    <property name="Value">75.19</property>
                     <property name="DrawValue">True</property>
                     <property name="Digits">2</property>
                     <property name="ValuePos">Left</property>
