@@ -1,13 +1,13 @@
 using System;
-using System.IO;
-using Gtk;
 using System.Collections.Generic;
-using Exameer;
 using System.Diagnostics;
-using System.Linq;
 using System.Drawing;
-using Gdk;
+using System.IO;
+using System.Linq;
 using Cairo;
+using Gdk;
+using Gtk;
+using Exameer;
 
 public partial class MainWindow: Gtk.Window
 {	
@@ -77,6 +77,7 @@ public partial class MainWindow: Gtk.Window
 
 				var images = Directory.GetFiles (".", node.Name.Replace (".pdf", "*.png")).ToList ()
 				.Where (x => x.Contains (node.Name.Replace (".pdf", "")))
+				.OrderBy(x => x)
 				.Select (x => new PngNode (x));
 
 				node.Images.AddRange (images);
@@ -119,7 +120,7 @@ public partial class MainWindow: Gtk.Window
 		                              FileChooserAction.Open,
 		                              "Cancel", ResponseType.Cancel,
 		                              "Open", ResponseType.Accept)) {
-			fc.SetCurrentFolder ("/media/zol/Green/Dropbox/lth/eda040 - realtidsprogrammering/exams");
+			fc.SetCurrentFolder ("/home/zol/Downloads/exams/endima1/");
 			fc.SelectMultiple = true;
 
 			if (fc.Run () == (int)ResponseType.Accept) {

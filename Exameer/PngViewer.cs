@@ -41,6 +41,10 @@ namespace Exameer
 
 		private int NodeIdx { get; set; }
 
+		private bool isShiftPressed {get;set;}
+
+		private List<Gdk.Key> pressedKeys = new List<Gdk.Key> ();
+
 		enum EditMode
 		{
 			None,
@@ -104,12 +108,13 @@ namespace Exameer
 
 				// If we left-click on a rectangle, let's select it.
 				bool toSelect = false;
-				int selectedId = -1;
+				//int selectedId = -1;
 				foreach (var selection in CurrentNode.Rectangles) {
 					if (selection.IsInside (x, y)) {
 						toSelect = true;
 						//selectedId = selection.ID;
 						NewIdDialog nid = new NewIdDialog ();
+						nid.entryNewID.Text = selection.ID.ToString ();
 						nid.Modal = true;
 						ResponseType resp = (ResponseType)nid.Run ();
 						if (resp == ResponseType.Ok) {
@@ -121,6 +126,10 @@ namespace Exameer
 
 				// If we didn't hit a rectangle, then we can draw a new one!
 				if (!toSelect) {
+
+					if (pressedKeys.Contains (Gdk.Key.Shift_L)) {
+						CurrentID--;
+					}
 
 					// Set top left point
 					var tmpRec = new Rectangle (0, 0 + OffsetX, 0 + OffsetY, 
@@ -362,7 +371,7 @@ namespace Exameer
 			this.QueueDraw ();
 		}
 
-		private List<Gdk.Key> pressedKeys = new List<Gdk.Key> ();
+
 
 		protected void OnKeyPressEvent (object sender, KeyPressEventArgs e)
 		{

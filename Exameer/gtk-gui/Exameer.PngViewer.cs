@@ -5,15 +5,25 @@ namespace Exameer
 	public partial class PngViewer
 	{
 		private global::Gtk.VBox vbox2;
+		
 		private global::Gtk.Label lblFilename;
+		
 		private global::Gtk.VBox vbox3;
+		
 		private global::Gtk.VBox vbox4;
+		
 		private global::Gtk.Table table3;
+		
 		private global::Gtk.Button btnNextImg;
+		
 		private global::Gtk.Button btnPrevImg;
+		
 		private global::Gtk.Button btnResetRectangles;
+		
 		private global::Gtk.HScale scaleLeftLine;
+		
 		private global::Gtk.HScale scaleRightLine;
+		
 		private global::Gtk.DrawingArea drawingarea1;
 
 		protected virtual void Build ()
@@ -54,85 +64,49 @@ namespace Exameer
 			this.btnNextImg.CanFocus = true;
 			this.btnNextImg.Name = "btnNextImg";
 			this.btnNextImg.UseUnderline = true;
-			// Container child btnNextImg.Gtk.Container+ContainerChild
-			global::Gtk.Alignment w2 = new global::Gtk.Alignment (0.5F, 0.5F, 0F, 0F);
-			// Container child GtkAlignment.Gtk.Container+ContainerChild
-			global::Gtk.HBox w3 = new global::Gtk.HBox ();
-			w3.Spacing = 2;
-			// Container child GtkHBox.Gtk.Container+ContainerChild
-			global::Gtk.Image w4 = new global::Gtk.Image ();
-			w4.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-go-forward", global::Gtk.IconSize.Button);
-			w3.Add (w4);
-			// Container child GtkHBox.Gtk.Container+ContainerChild
-			global::Gtk.Label w6 = new global::Gtk.Label ();
-			w6.LabelProp = global::Mono.Unix.Catalog.GetString ("Next");
-			w6.UseUnderline = true;
-			w3.Add (w6);
-			w2.Add (w3);
-			this.btnNextImg.Add (w2);
+			this.btnNextImg.Label = global::Mono.Unix.Catalog.GetString ("Next");
+			global::Gtk.Image w2 = new global::Gtk.Image ();
+			w2.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-go-forward", global::Gtk.IconSize.Button);
+			this.btnNextImg.Image = w2;
 			this.table3.Add (this.btnNextImg);
-			global::Gtk.Table.TableChild w10 = ((global::Gtk.Table.TableChild)(this.table3 [this.btnNextImg]));
-			w10.LeftAttach = ((uint)(9));
-			w10.RightAttach = ((uint)(10));
-			w10.XOptions = ((global::Gtk.AttachOptions)(4));
-			w10.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w3 = ((global::Gtk.Table.TableChild)(this.table3 [this.btnNextImg]));
+			w3.LeftAttach = ((uint)(9));
+			w3.RightAttach = ((uint)(10));
+			w3.XOptions = ((global::Gtk.AttachOptions)(4));
+			w3.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table3.Gtk.Table+TableChild
 			this.btnPrevImg = new global::Gtk.Button ();
 			this.btnPrevImg.CanFocus = true;
 			this.btnPrevImg.Name = "btnPrevImg";
 			this.btnPrevImg.UseUnderline = true;
-			// Container child btnPrevImg.Gtk.Container+ContainerChild
-			global::Gtk.Alignment w11 = new global::Gtk.Alignment (0.5F, 0.5F, 0F, 0F);
-			// Container child GtkAlignment.Gtk.Container+ContainerChild
-			global::Gtk.HBox w12 = new global::Gtk.HBox ();
-			w12.Spacing = 2;
-			// Container child GtkHBox.Gtk.Container+ContainerChild
-			global::Gtk.Image w13 = new global::Gtk.Image ();
-			w13.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-go-back", global::Gtk.IconSize.Button);
-			w12.Add (w13);
-			// Container child GtkHBox.Gtk.Container+ContainerChild
-			global::Gtk.Label w15 = new global::Gtk.Label ();
-			w15.LabelProp = global::Mono.Unix.Catalog.GetString ("Previous");
-			w15.UseUnderline = true;
-			w12.Add (w15);
-			w11.Add (w12);
-			this.btnPrevImg.Add (w11);
+			this.btnPrevImg.Label = "Previous";
+			global::Gtk.Image w4 = new global::Gtk.Image ();
+			w4.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-go-back", global::Gtk.IconSize.Button);
+			this.btnPrevImg.Image = w4;
 			this.table3.Add (this.btnPrevImg);
-			global::Gtk.Table.TableChild w19 = ((global::Gtk.Table.TableChild)(this.table3 [this.btnPrevImg]));
-			w19.XOptions = ((global::Gtk.AttachOptions)(4));
-			w19.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w5 = ((global::Gtk.Table.TableChild)(this.table3 [this.btnPrevImg]));
+			w5.XOptions = ((global::Gtk.AttachOptions)(4));
+			w5.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table3.Gtk.Table+TableChild
 			this.btnResetRectangles = new global::Gtk.Button ();
 			this.btnResetRectangles.CanFocus = true;
 			this.btnResetRectangles.Name = "btnResetRectangles";
 			this.btnResetRectangles.UseUnderline = true;
-			// Container child btnResetRectangles.Gtk.Container+ContainerChild
-			global::Gtk.Alignment w20 = new global::Gtk.Alignment (0.5F, 0.5F, 0F, 0F);
-			// Container child GtkAlignment.Gtk.Container+ContainerChild
-			global::Gtk.HBox w21 = new global::Gtk.HBox ();
-			w21.Spacing = 2;
-			// Container child GtkHBox.Gtk.Container+ContainerChild
-			global::Gtk.Image w22 = new global::Gtk.Image ();
-			w22.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-cancel", global::Gtk.IconSize.Button);
-			w21.Add (w22);
-			// Container child GtkHBox.Gtk.Container+ContainerChild
-			global::Gtk.Label w24 = new global::Gtk.Label ();
-			w24.LabelProp = global::Mono.Unix.Catalog.GetString ("Reset");
-			w24.UseUnderline = true;
-			w21.Add (w24);
-			w20.Add (w21);
-			this.btnResetRectangles.Add (w20);
+			this.btnResetRectangles.Label = global::Mono.Unix.Catalog.GetString ("Reset");
+			global::Gtk.Image w6 = new global::Gtk.Image ();
+			w6.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-cancel", global::Gtk.IconSize.Button);
+			this.btnResetRectangles.Image = w6;
 			this.table3.Add (this.btnResetRectangles);
-			global::Gtk.Table.TableChild w28 = ((global::Gtk.Table.TableChild)(this.table3 [this.btnResetRectangles]));
-			w28.LeftAttach = ((uint)(4));
-			w28.RightAttach = ((uint)(5));
-			w28.XOptions = ((global::Gtk.AttachOptions)(4));
-			w28.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w7 = ((global::Gtk.Table.TableChild)(this.table3 [this.btnResetRectangles]));
+			w7.LeftAttach = ((uint)(4));
+			w7.RightAttach = ((uint)(5));
+			w7.XOptions = ((global::Gtk.AttachOptions)(4));
+			w7.YOptions = ((global::Gtk.AttachOptions)(4));
 			this.vbox4.Add (this.table3);
-			global::Gtk.Box.BoxChild w29 = ((global::Gtk.Box.BoxChild)(this.vbox4 [this.table3]));
-			w29.Position = 0;
-			w29.Expand = false;
-			w29.Fill = false;
+			global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.vbox4 [this.table3]));
+			w8.Position = 0;
+			w8.Expand = false;
+			w8.Fill = false;
 			// Container child vbox4.Gtk.Box+BoxChild
 			this.scaleLeftLine = new global::Gtk.HScale (null);
 			this.scaleLeftLine.CanFocus = true;
@@ -145,10 +119,10 @@ namespace Exameer
 			this.scaleLeftLine.Digits = 2;
 			this.scaleLeftLine.ValuePos = ((global::Gtk.PositionType)(0));
 			this.vbox4.Add (this.scaleLeftLine);
-			global::Gtk.Box.BoxChild w30 = ((global::Gtk.Box.BoxChild)(this.vbox4 [this.scaleLeftLine]));
-			w30.Position = 1;
-			w30.Expand = false;
-			w30.Fill = false;
+			global::Gtk.Box.BoxChild w9 = ((global::Gtk.Box.BoxChild)(this.vbox4 [this.scaleLeftLine]));
+			w9.Position = 1;
+			w9.Expand = false;
+			w9.Fill = false;
 			// Container child vbox4.Gtk.Box+BoxChild
 			this.scaleRightLine = new global::Gtk.HScale (null);
 			this.scaleRightLine.CanFocus = true;
@@ -161,25 +135,25 @@ namespace Exameer
 			this.scaleRightLine.Digits = 2;
 			this.scaleRightLine.ValuePos = ((global::Gtk.PositionType)(0));
 			this.vbox4.Add (this.scaleRightLine);
-			global::Gtk.Box.BoxChild w31 = ((global::Gtk.Box.BoxChild)(this.vbox4 [this.scaleRightLine]));
-			w31.Position = 2;
-			w31.Expand = false;
-			w31.Fill = false;
+			global::Gtk.Box.BoxChild w10 = ((global::Gtk.Box.BoxChild)(this.vbox4 [this.scaleRightLine]));
+			w10.Position = 2;
+			w10.Expand = false;
+			w10.Fill = false;
 			this.vbox3.Add (this.vbox4);
-			global::Gtk.Box.BoxChild w32 = ((global::Gtk.Box.BoxChild)(this.vbox3 [this.vbox4]));
-			w32.Position = 0;
-			w32.Expand = false;
-			w32.Fill = false;
+			global::Gtk.Box.BoxChild w11 = ((global::Gtk.Box.BoxChild)(this.vbox3 [this.vbox4]));
+			w11.Position = 0;
+			w11.Expand = false;
+			w11.Fill = false;
 			// Container child vbox3.Gtk.Box+BoxChild
 			this.drawingarea1 = new global::Gtk.DrawingArea ();
 			this.drawingarea1.Name = "drawingarea1";
 			this.vbox3.Add (this.drawingarea1);
-			global::Gtk.Box.BoxChild w33 = ((global::Gtk.Box.BoxChild)(this.vbox3 [this.drawingarea1]));
-			w33.Position = 2;
-			w33.Padding = ((uint)(10));
+			global::Gtk.Box.BoxChild w12 = ((global::Gtk.Box.BoxChild)(this.vbox3 [this.drawingarea1]));
+			w12.Position = 2;
+			w12.Padding = ((uint)(10));
 			this.vbox2.Add (this.vbox3);
-			global::Gtk.Box.BoxChild w34 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.vbox3]));
-			w34.Position = 1;
+			global::Gtk.Box.BoxChild w13 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.vbox3]));
+			w13.Position = 1;
 			this.Add (this.vbox2);
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
