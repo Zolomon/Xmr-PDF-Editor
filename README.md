@@ -1,7 +1,7 @@
-Exameer-PDF-Editor
+Xmr PDF Editor
 ==================
 
-Gtk# based PDF Editor for the Exameer project
+Gtk# based PDF Editor for the Xmr project
 
 ## TODO:
 *  Add start-up dialog on first run, and save default directory in a properties file
